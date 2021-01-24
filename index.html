@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Première app React</title>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+<script type="text/babel">
+    // on créé un component React
+    // App va hériter des propriétés et des méthodes de la classe React.Component
+    // React.Component est une classe prédéfinie dans React
+    class App extends React.Component {
+        // ici on indique ce que l'on veut afficher
+        // on utilise la méthode de React.Component
+        render() {
+            return <h1> Titre au hasard </h1>
+        }
+    }
+    // on appelle la méthode ReactDOM.render() 
+    // qui appelle la méthode render() de notre component 
+    ReactDOM.render(
+        // Si pas d'enfant, on fait une syntaxe auto fermante
+        <App/>, 
+        // va l'afficher à l'intérieur de l'élément #root 
+        document.getElementById("root")
+    );
+</script>
+
+<!-- CDN React (la base de React)-->
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<!-- CDN React DOM (librairie nécessaire pour un support Web)-->
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<!-- CDN Babel (transpilateur, nécessaire car React utilise du ES6 que tous les navigateurs ne connaissent pas) -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</html>
